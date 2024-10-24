@@ -1,0 +1,385 @@
+type: custom:layout-card
+layout_type: custom:grid-layout
+cards:
+  - entity: ""
+    content: "<div style=\"width:50px; border-radius: 25px;\">\r\n  <div style=\"height: 15px; width: 100%;\"></div>\r\n  <a href=\"/dashboard-tablet/home\"><svg style=\"margin-left: 6;\" width=\"50\" fill=\"#fff\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path class=\"primary-path\" d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\"/></svg></a>\r\n  <div style=\"height: 15px; width: 100%;\"></div>\r\n  <a href=\"/dashboard-tablet/lights\"><svg style=\"margin-left: 6;\" width=\"50\" fill=\"#fff\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path class=\"primary-path\" d=\"m10 2 2 7H2l2-7m2 8h2v10h3v2H3v-2h3zm14-2 2 7H12l2-7m2 8h2v4h3v2h-8v-2h3z\"/></svg></a>\r\n  <div style=\"height: 15px; width: 100%;\"></div>\r\n  <a href=\"/dashboard-tablet/map\"><svg style=\"margin-left: 6;\" width=\"50\" fill=\"#fff\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path class=\"primary-path\" d=\"M12 4c2.2 0 4 1.8 4 4 0 2.1-2.1 5.5-4 7.9-1.9-2.5-4-5.8-4-7.9 0-2.2 1.8-4 4-4m0-2C8.7 2 6 4.7 6 8c0 4.5 6 11 6 11s6-6.6 6-11c0-3.3-2.7-6-6-6m0 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m8 13c0 2.2-3.6 4-8 4s-8-1.8-8-4c0-1.3 1.2-2.4 3.1-3.2l.6.9c-1 .5-1.7 1.1-1.7 1.8 0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5c0-.7-.7-1.3-1.8-1.8l.6-.9c2 .8 3.2 1.9 3.2 3.2\"/></svg></a>\r\n  <div style=\"height: 15px; width: 100%;\"></div>\r\n  <a href=\"/dashboard-tablet/hoover\"><svg style=\"margin-left: 6;\" width=\"50\" fill=\"#fff\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path class=\"primary-path\" d=\"M23 20v2h-7v-2h2.46L12 4.61c-.19-.47-.5-.85-.94-1.15S10.14 3 9.61 3c-.71 0-1.33.27-1.85.79S7 4.92 7 5.64V9h1c2.21 0 4 1.79 4 4v9H8c.61-.84 1-1.87 1-3 0-2.76-2.24-5-5-5-.71 0-1.39.15-2 .42V9h3V5.64c0-.84.23-1.64.63-2.32.41-.7.96-1.26 1.67-1.69Q8.35 1 9.61 1c.94 0 1.79.26 2.55.77s1.34 1.2 1.71 2.04L20.66 20zM7 19c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3m-2 0c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1\"/></svg></a>\r\n  <div style=\"height: 15px; width: 100%;\"></div>\r\n</div>"
+    ignore_line_breaks: true
+    always_update: false
+    parse_jinja: true
+    code_editor: Ace
+    entities: []
+    bindings: []
+    actions: []
+    debounceChangePeriod: 100
+    plugins:
+      daisyui:
+        enabled: true
+        url: https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css
+        theme: dark - dark
+        overrideCardBackground: false
+      tailwindElements:
+        enabled: false
+    type: custom:tailwindcss-template-card
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: nav
+  - type: custom:vacuum-card
+    entity: vacuum.deadpool
+    map: image.deadpool_home
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+           ha-card.type-undefined {
+            --vc-background: transparent;
+            --vc-devider-color: transparent;
+            --vc-spacing: 0;
+          }
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: right
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean Living Area
+    icon_animation: false
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        params:
+          - segments:
+              - 16
+            repeat: 1
+        command: app_segment_clean
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 16
+            repeat: 2
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-1
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean [Censored]'s Bedroom
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 20
+            repeat: 1
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 20
+            repeat: 2
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-2
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean [Censored]' Bedroom
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 19
+            repeat: 1
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 19
+            repeat: 2
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-3
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean [Censored]'s Bedroom
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 21
+            repeat: 1
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 21
+            repeat: 2
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-4
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean Perents Bedroom
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 18
+            repeat: 1
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 18
+            repeat: 2
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-5
+  - type: custom:mushroom-vacuum-card
+    entity: vacuum.deadpool
+    name: Clean Whole House
+    primary_info: name
+    secondary_info: none
+    tap_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        command: app_segment_clean
+        params:
+          - segments:
+              - 16
+              - 18
+              - 19
+              - 20
+              - 21
+            repeat: 1
+    hold_action:
+      action: perform-action
+      perform_action: vacuum.send_command
+      target:
+        entity_id: vacuum.deadpool
+      data:
+        params:
+          - segments:
+              - 16
+              - 18
+              - 19
+              - 20
+              - 21
+            repeat: 2
+        command: app_segment_clean
+    card_mod:
+      style: |
+        @media (prefers-color-scheme: dark) {
+          ha-card {
+            border: solid 1px #4b1383;
+            border-radius: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0,0,0,.50);
+           }
+          .noob-icon {color:red;}
+        }
+
+        @media (prefers-color-scheme: light) {
+          ha-card {
+            background-color: #30254f;
+            border: solid 0px #999;
+            color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+        }
+    view_layout:
+      grid-area: main-6
+layout:
+  grid-template-columns: 70px 300px auto
+  grid-template-rows: auto auto auto
+  grid-template-areas: |
+    "nav main-1 right"
+    "nav main-2 right"
+    "nav main-3 right"
+    "nav main-4 right"
+    "nav main-5 right"
+    "nav main-6 right"

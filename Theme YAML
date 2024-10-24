@@ -1,0 +1,8 @@
+# Note for me I put this in a seperate file and them pointed to it from the main theme yaml file. The purpose for this theme is just to set the background, only dark mode has been set right now
+Noobs_Tablet:
+  modes:
+    light: {}
+    dark:
+      lovelace-background: 'center / cover no-repeat url("/local/blurry-gradient-darkv2.svg") fixed'
+      primary-background-color: "#fff"
+      vc-background: 'rgba(0,0,0,.50)'
